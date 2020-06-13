@@ -1,3 +1,2 @@
 from .home.home import home
-from ..models.knot import Knot
-from ..models.time import Time
+from .knots.list import knots_list

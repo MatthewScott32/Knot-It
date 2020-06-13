@@ -8,7 +8,6 @@ from django.urls import reverse
 class Knot(models.Model):
     rope_type = models.CharField(max_length=50, default='')
     company = models.CharField(max_length=50, default='')
-    time = models.CharField(max_length=50, default='')
     price = models.CharField(max_length=50)
     notes = models.CharField(max_length=50, default='')
     video = models.FileField(upload_to='videos/', null=True, verbose_name="")
