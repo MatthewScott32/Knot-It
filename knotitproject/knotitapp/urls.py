@@ -6,4 +6,5 @@ app_name = "knotitapp"
 urlpatterns = [
     path('', home, name='home'),
     path('knots/', knots_list, name='knots'),
+    path('times/', times_list, name='times'),
 ]

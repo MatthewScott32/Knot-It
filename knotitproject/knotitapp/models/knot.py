@@ -6,6 +6,7 @@ from django.db import IntegrityError
 from django.urls import reverse
 
 class Knot(models.Model):
+    name = models.CharField(max_length=50, default='')
     rope_type = models.CharField(max_length=50, default='')
     company = models.CharField(max_length=50, default='')
     price = models.CharField(max_length=50)
