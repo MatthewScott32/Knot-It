@@ -8,7 +8,7 @@
     <title>
            Knot It!
     </title>
-    <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+    <link rel="stylesheet" />
 
     {% block css %}
     {% endblock %}
@@ -19,17 +19,17 @@
         <ol>
             <li><b>Knot It!</b></li>
             {% if user.is_authenticated %}
-            <li class="navList__route"><a href="{% url 'knotitapp:home' %}">Home</a></li>
-            <li class="navList__route"><a href="{% url 'knotitapp:knots' %}">Knots</a></li>
-            <li class="navList__route"><a href="{% url 'knotitapp:logout' %}">Logout</a></li>
+                <li><a href="{% url 'knotitapp:home' %}">Home</a></li>
+                <li><a href="{% url 'knotitapp:knots' %}">Knots</a></li>
+                <li><a href="{% url 'knotitapp:logout' %}">Logout</a></li>
             {% else %}
-            <li class="navList__route"><a href="{% url 'knotitapp:home' %}">Home</a></li>
-            <li class="navList__route"><a href="{% url 'knotitapp:login' %}">Login</a></li>
-            <li class="navList__route"><a href="{% url 'knotitapp:register' %}">Register</a></li>
+                <li><a href="{% url 'knotitapp:home' %}">Home</a></li>
+                <li><a href="{% url 'knotitapp:login' %}">Login</a></li>
+                <li><a href="{% url 'knotitapp:register' %}">Register</a></li>
             {% endif %}
         </ol>
     </nav>
-    <main class="main-content">
+    <main>
         {% block content %}
         {% endblock %}
     </main>
