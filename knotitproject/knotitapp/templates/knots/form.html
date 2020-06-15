@@ -1,0 +1,27 @@
+{% extends 'shared/base.html' %}
+{% load static%}
+
+{% comment %} {% block css %}
+    <link rel="stylesheet" href="{% static 'styles/itemform.css' %}" />
+{% endblock %} {% endcomment %}
+
+{% block content %}
+
+    {% if knot_id is not None %}
+    <h1>Edit Knot</h1>
+      <form action="{% url 'knotitapp:knot_edit_form' knot_id %}" method="post" enctype="multipart/form-data">
+    {% else %}
+    <h1>New Knot</h1>
+    <form action="{% url 'knotitapp:upload_knot' %}" method="post" enctype="multipart/form-data">
+    {% endif %}
+    {% csrf_token %}
+    {{ form.as_p}}
+        {% if knot_id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update" />
+        {% else %}
+            <input type="submit" value="Create" />
+        {% endif %}
+      </form>
+    
+    {%endblock%}
