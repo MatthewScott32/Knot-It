@@ -20,6 +20,7 @@
             <li><b>Knot It!</b></li>
             {% if user.is_authenticated %}
             <li class="navList__route"><a href="{% url 'knotitapp:home' %}">Home</a></li>
+            <li class="navList__route"><a href="{% url 'knotitapp:logout' %}">Logout</a></li>
             {% else %}
             <li class="navList__route"><a href="{% url 'knotitapp:home' %}">Home</a></li>
             {% endif %}
