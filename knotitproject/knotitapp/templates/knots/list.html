@@ -1,0 +1,28 @@
+{% extends 'shared/base.html' %}
+{% load static%}
+
+{% comment %} {% block css %}
+    <link rel="stylesheet" href="{% static 'styles/knots.css' %}" />
+{% endblock %} {% endcomment %}
+
+   {% block title %}
+            Knots
+   {% endblock %}
+    
+
+{% block content %}
+
+
+    <h1>Knots</h1>
+
+    {% comment %} <a href="{% url 'knotitapp:upload_knot' %}">Add Knot</a> {% endcomment %}
+
+    <ol>
+    {% for knot in all_knots %}
+        <li>
+            <p><b>Knot:</b>{{knot.name}}</a></p>
+            <p><b>Rope:</b> {{knot.rope_type}}</p>
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}
