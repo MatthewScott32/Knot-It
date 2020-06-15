@@ -11,8 +11,6 @@ from django.forms import ModelChoiceField
 from django.contrib.auth.decorators import login_required
 
 
-def success(request):
-    return HttpResponseRedirect(reverse('knotitapp:knots'))
 
 
 class KnotForm(forms.ModelForm):
@@ -39,7 +37,7 @@ def knot_form(request):
             knot = form.save(commit=False)
             knot.user_id = request.user.id
             knot.save()
-            return redirect('knotitapp:success')
+            return redirect('knotitapp:knots')
 
     else:
         form = KnotForm(current_user)
