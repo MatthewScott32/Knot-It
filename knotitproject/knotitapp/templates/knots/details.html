@@ -1,6 +1,6 @@
   
 {% extends 'shared/base.html' %}
-{% load static%}
+{% load static %}
 
 {% block css %}
     <link rel="stylesheet" />
@@ -21,15 +21,16 @@
       </form>
 
       <form action="{% url 'knotitapp:knot_edit_form' knot.id %}" method="GET">
-              {% csrf_token %}
-              <button>Edit</button>
+        {% csrf_token %}
+        <button>Edit</button>
       </form>
     </section>
 
     <ul>
         <li>
-            <video src="{{MEDIA_URL}}{{knot.video}}">
-            <img src="{{MEDIA_URL}}{{knot.image}}" alt="image" height="100" width="75">
+            <p><video controls src="{{MEDIA_URL}}{{knot.video}}" type="video/mp4" alt="video" height="300" width="200">
+            </video></p>
+            <p><img src="{{MEDIA_URL}}{{knot.image}}" alt="image" height="200" width="150"></p>
             <p><b>Name:</b> {{knot.name}}</p>
             <p><b>Rope Type:</b> {{knot.rope_type}}</p>
             <p><b>Company:</b> {{knot.company}}</p>

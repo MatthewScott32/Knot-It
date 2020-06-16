@@ -42,7 +42,7 @@ def knot_details(request, knot_id):
         if (
             "actual_method" in form_data
             and form_data["actual_method"] == "DELETE"
-        ):
+           ):
                 
             knot = Knot.objects.get(pk=knot_id)
             knot.delete()
