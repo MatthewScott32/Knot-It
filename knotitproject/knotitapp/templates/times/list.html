@@ -1,0 +1,25 @@
+{% extends 'shared/base.html' %}
+{% load static%}
+
+{% block css %}
+    <link rel="stylesheet" />
+{% endblock %}
+
+   {% block title %}
+            Times
+   {% endblock %}
+    
+
+{% block content %}
+
+
+    <h1>Times</h1>
+    <ol>
+    {% for time in all_times %}
+        <li>
+            <p><b>Time:</b> <a href="{% url 'knotitapp:time' time.id %}">{{time.time}}</a></p>
+            <p><b>Knot:</b> {{time.knot}}</p>
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}

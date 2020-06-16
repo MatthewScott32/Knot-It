@@ -5,14 +5,14 @@ from knotitapp.models import Knot, Time
 # from ..connection import Connection
 from django.contrib.auth.decorators import login_required
 
-# @login_required
+@login_required
 def times_list(request):
     if request.method == 'GET':
 
         current_user = request.user.id
         all_knots = Knot.objects.filter(user_id=current_user).values("id", "name", "rope_type", "company", "notes", "video" )
 
-        all_times = Time.objects.filter(user_id=current_user).values("id", "time")
+        all_times = Time.objects.filter(user_id=current_user).values("id", "time", "knot")
         knotId = request.GET.get('knot', None)
 
         if knotId is not None:
