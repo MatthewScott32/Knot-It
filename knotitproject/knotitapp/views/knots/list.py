@@ -5,7 +5,7 @@ from knotitapp.models import Knot
 from ..connection import Connection
 from django.contrib.auth.decorators import login_required
 
-# @login_required
+@login_required
 def knots_list(request):
     if request.method == 'GET':
                 current_user = request.user.id
