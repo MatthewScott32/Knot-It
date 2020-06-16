@@ -1,0 +1,41 @@
+  
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" />
+{% endblock %}
+
+   {% block title %}
+            Knots
+   {% endblock %}
+    
+
+{% block content %}
+    <h1>Knot</h1>
+     <section>
+      <form action="{% url 'knotitapp:knot' knot.id %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="actual_method" value="DELETE">
+        <button>Delete</button>
+      </form>
+
+      <form action="{% url 'knotitapp:knot_edit_form' knot.id %}" method="GET">
+        {% csrf_token %}
+        <button>Edit</button>
+      </form>
+    </section>
+
+    <ul>
+        <li>
+            <p><video controls src="{{MEDIA_URL}}{{knot.video}}" type="video/mp4" alt="video" height="300" width="200">
+            </video></p>
+            <p><img src="{{MEDIA_URL}}{{knot.image}}" alt="image" height="200" width="150"></p>
+            <p><b>Name:</b> {{knot.name}}</p>
+            <p><b>Rope Type:</b> {{knot.rope_type}}</p>
+            <p><b>Company:</b> {{knot.company}}</p>
+            <p><b>Price:</b> {{knot.price}}</p>
+            <p><b>Notes:</b> {{knot.notes}}</p>
+        </li>
+    </ul>
+{% endblock %}

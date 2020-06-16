@@ -8,7 +8,6 @@ from ..connection import Connection
 from django.forms import ModelForm
 from django.http import HttpResponseRedirect
 from django.forms import ModelChoiceField
-from django.contrib.auth.decorators import login_required
 
 
 
@@ -47,27 +46,26 @@ def knot_form(request):
         return render(request, 'knots/form.html', context)
 
 
-# @login_required
-# def knot_edit_form(request, knot_id):
-#     context = {}
-#     current_user = request.user.id
-#     knot = get_knot(knot_id)
-#     if request.method == 'GET':
-#         form = KnotForm(current_user, instance=knot)
-#         context['form'] = form
-#         context['knot_id'] = knot_id
+@login_required
+def knot_edit_form(request, knot_id):
+    context = {}
+    current_user = request.user.id
+    knot = get_knot(knot_id)
+    if request.method == 'GET':
+        form = KnotForm(current_user, instance=knot)
+        context['form'] = form
+        context['knot_id'] = knot_id
 
-#         template = 'knots/form.html'
+        template = 'knots/form.html'
 
-#         return render(request, template, context)
+        return render(request, template, context)
 
-#     if request.method == 'POST':
-#         # Pass in the user edited data via the resquest.POST param, and any media files via request.FILES (i.e. docs, imgs, etc.) while ensuring the correct instance is being updated
-#         form = KnotForm(current_user, request.POST, request.FILES, instance=knot)
+    if request.method == 'POST':
+        # Pass in the user edited data via the resquest.POST param, and any media files via request.FILES (i.e. docs, imgs, etc.) while ensuring the correct instance is being updated
+        form = KnotForm(current_user, request.POST, request.FILES, instance=knot)
 
-#         # Ensure form validation is complete and the correct data is being passed back to the server
-#         if form.is_valid():
-#             # Save the changes to the database
-#             form.save()
-#             # Redirect the user to the success HttpResponse method, which sends
-#             return redirect('knotitapp:success')
+        # Ensure form validation is complete and the correct data is being passed back to the server
+        if form.is_valid():
+            # Save the changes to the database
+            form.save()
+            return redirect('knotitapp:knots')
