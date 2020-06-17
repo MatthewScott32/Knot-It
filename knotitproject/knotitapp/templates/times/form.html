@@ -1,0 +1,36 @@
+{% extends 'shared/base.html' %}
+{% load static%}
+
+{% block css %}
+    <link rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+
+    {% if time.id is not None %}
+    <h1>Edit Time</h1>
+    <form action="{% url 'knotitapp:time' time.id %}" method="post">
+    {% else %}
+        <h1>New Time</h1>
+        <form action="{% url 'knotitapp:times' %}" method="post">
+        {% endif %}
+        {% csrf_token %}
+        <fieldset>
+            <label for="time">Time: </label>
+            <input required id="time" type="text" time="time" value="{{time.time}}" required>
+        </fieldset>
+        <label for="knot">Knot: </label>
+        <select required id="knot_id" type="text" name="knot_id" value"{{knot.knot_id}}" required>
+                {% for knot in all_knots %}
+                    <option value="{{ knot.id }}">{{ knot.name }}</option>
+                {% endfor %} 
+        </select>
+
+        {% if time.id is not None %}
+            <input type="hidden" name="actual_method" value="PUT">
+            <input type="submit" value="Update" />
+        {% else %}
+            <input type="submit" value="Create" />
+        {% endif %}
+    </form>
+{% endblock %}

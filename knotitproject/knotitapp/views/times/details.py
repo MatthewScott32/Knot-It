@@ -37,7 +37,7 @@ def time_details(request, time_id):
         if (
             "actual_method" in form_data
             and form_data["actual_method"] == "DELETE"
-        ):
+           ):
                 
             time = Time.objects.get(pk=time_id)
             time.delete()
