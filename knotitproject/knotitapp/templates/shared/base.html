@@ -21,6 +21,7 @@
             {% if user.is_authenticated %}
                 <li><a href="{% url 'knotitapp:home' %}">Home</a></li>
                 <li><a href="{% url 'knotitapp:knots' %}">Knots</a></li>
+                <li><a href="{% url 'knotitapp:times' %}">Times</a></li>
                 <li><a href="{% url 'knotitapp:logout' %}">Logout</a></li>
             {% else %}
                 <li><a href="{% url 'knotitapp:home' %}">Home</a></li>
