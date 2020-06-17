@@ -8,23 +8,21 @@ def get_time(time_id):
    
     return Time.objects.get(pk=time_id)
 
-def get_knots():
-    current_user = request.user.id
-    all_knots = Knot.objects.filter(user_id=current_user).values("id", "name")
-    # if request.method == 'GET':
-    all_stores = Knot.objects.all()
+def get_knots(user):
+    all_knots = Knot.objects.filter(user=user)
     return all_knots
 
 @login_required
 def time_form(request):
     if request.method == 'GET':
-        # times = get_times()
+        knots = get_knots(request.user)
         template = 'times/form.html'
-        # context = {
-        #     'all_times': times
-        # }
+        context = {
+            'all_knots': knots
+            
+        }
 
-        return render(request, template)
+        return render(request, template, context)
 
 
 @login_required
@@ -32,12 +30,12 @@ def time_edit_form(request, time_id):
 
     if request.method == 'GET':
         time = get_time(time_id)
-        times = get_knots()
+        knots = get_knots(request.user)
 
         template = 'times/form.html'
         context = {
             'time': time,
-            # 'all_times': times
+            'all_knots': knots
         }
 
         return render(request, template, context)
