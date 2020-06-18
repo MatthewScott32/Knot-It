@@ -20,7 +20,7 @@
     <ol>
     {% for knot in all_knots %}
         <li>
-            <p><b>Knot:</b>{{knot.name}}</a></p>
+            <p><b>Knot:</b><a href="{% url 'knotitapp:knot' knot.id %}">{{knot.name}}</a></p>
             <p><b>Rope:</b> {{knot.rope_type}}</p>
         </li>
     {% endfor %}
