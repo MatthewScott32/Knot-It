@@ -10,9 +10,9 @@ def times_list(request):
     if request.method == 'GET':
 
         current_user = request.user.id
-        all_knots = Knot.objects.filter(user_id=current_user).values("id", "name", "rope_type", "company", "notes", "video" )
+        all_knots = Knot.objects.filter(user_id=current_user).values("id", "name", "rope_type", "company", "notes", "video", "image" )
 
-        all_times = Time.objects.filter(user_id=current_user).values("id", "time", "knot")
+        all_times = Time.objects.filter(user_id=current_user).values("id", "time", "knot", "knot__name")
         knotId = request.GET.get('knot', None)
 
         if knotId is not None:
