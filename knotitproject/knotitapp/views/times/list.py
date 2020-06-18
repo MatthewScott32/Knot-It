@@ -28,10 +28,10 @@ def times_list(request):
             
     elif request.method == 'POST':
         form_data = request.POST
-        new_item = Time(
+        new_time = Time(
             time = form_data['time'],
             knot_id = int(form_data['knot']),
             user_id = request.user.id,
         ) 
-        new_item.save()
+        new_time.save()
         return redirect(reverse('knotitapp:times'))

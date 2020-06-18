@@ -17,10 +17,10 @@
         {% csrf_token %}
         <fieldset>
             <label for="time">Time: </label>
-            <input required id="time" type="text" time="time" placeholder="00:00" value="{{time.time}}" required>
+            <input required id="time" type="text" name="time" placeholder="00:00" value="{{time.time}}" required>
         </fieldset>
         <label for="knot">Knot: </label>
-        <select required id="knot_id" type="text" name="knot_id" value"{{knot.knot_id}}" required>
+        <select required id="knot_id" type="text" name="knot" value"{{knot.knot_id}}" required>
                 {% for knot in all_knots %}
                     <option value="{{ knot.id }}">{{ knot.name }}</option>
                 {% endfor %} 
