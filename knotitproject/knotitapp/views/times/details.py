@@ -32,12 +32,12 @@ def time_details(request, time_id):
 
             time_to_update.save()
 
-            return redirect(reverse('knotitpapp:times'))
+            return redirect(reverse('knotitapp:times'))
 
         if (
             "actual_method" in form_data
             and form_data["actual_method"] == "DELETE"
-        ):
+           ):
                 
             time = Time.objects.get(pk=time_id)
             time.delete()

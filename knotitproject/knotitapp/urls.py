@@ -14,4 +14,6 @@ urlpatterns = [
     path('knots/<int:knot_id>/form/', knot_edit_form, name='knot_edit_form'),
     path('times/', times_list, name='times'),
     path('times/<int:time_id>/', time_details, name='time'),
+    path('times/form', time_form, name='time_form'),
+    path('times/<int:time_id>/form/', time_edit_form, name='time_edit_form'),
 ]
