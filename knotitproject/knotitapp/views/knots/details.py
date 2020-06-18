@@ -17,7 +17,6 @@ def knot_details(request, knot_id):
     knot = get_knot(knot_id)
     if knot.user_id == current_user:
         if request.method == 'GET':
-            knot = get_knot(knot_id)
             template_name = 'knots/details.html'
             return render(request, template_name, {'knot': knot})
 
