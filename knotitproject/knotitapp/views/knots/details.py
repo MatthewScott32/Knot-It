@@ -33,7 +33,6 @@ def knot_details(request, knot_id):
                 knot_update.name = form_data['name']
                 knot_update.rope_type = form_data['rope_type']
                 knot_update.company = form_data['company']
-                knot_update.price = form_data['price']
                 knot_update.notes = form_data['notes']
                 knot_update.video = form_data['video']
                 knot_update.image = form_data['image']

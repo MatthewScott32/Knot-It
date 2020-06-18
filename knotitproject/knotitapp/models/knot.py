@@ -9,7 +9,6 @@ class Knot(models.Model):
     name = models.CharField(max_length=50, default='')
     rope_type = models.CharField(max_length=50, default='')
     company = models.CharField(max_length=50, default='')
-    price = models.CharField(max_length=50)
     notes = models.CharField(max_length=50, default='')
     video = models.FileField(upload_to='videos/', null=True, verbose_name="")
     image = models.ImageField(upload_to='images/', null=True)
