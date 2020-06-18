@@ -14,11 +14,18 @@
 
 
     <h1>Times</h1>
+
+    <a href="{% url 'knotitapp:time_form' %}">Add Time</a>
     <ol>
     {% for time in all_times %}
         <li>
             <p><b>Time:</b> {{time.time}}</a></p>
             <p><b>Knot:</b> {{time.knot__name}}</p>
+
+        <form action="{% url 'knotitapp:time_edit_form' time.id %}" method="GET">
+              {% csrf_token %}
+              <button>Edit</button>
+        </form>
         
         <form action="{% url 'knotitapp:time' time.id %}" method="POST">
             {% csrf_token %}

@@ -15,12 +15,12 @@
 
     <h1>Knots</h1>
 
-    {% comment %} <a href="{% url 'knotitapp:upload_knot' %}">Add Knot</a> {% endcomment %}
+    <a href="{% url 'knotitapp:knot_form' %}">Add Knot</a>
 
     <ol>
     {% for knot in all_knots %}
         <li>
-            <p><b>Knot:</b>{{knot.name}}</a></p>
+            <p><b>Knot:</b><a href="{% url 'knotitapp:knot' knot.id %}">{{knot.name}}</a></p>
             <p><b>Rope:</b> {{knot.rope_type}}</p>
         </li>
     {% endfor %}
