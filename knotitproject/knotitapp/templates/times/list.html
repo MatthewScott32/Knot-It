@@ -17,8 +17,8 @@
     <ol>
     {% for time in all_times %}
         <li>
-            <p><b>Time:</b> <a href="{% url 'knotitapp:time' time.id %}">{{time.time}}</a></p>
-            <p><b>Knot:</b> {{time.knot}}</p>
+            <p><b>Time:</b> {{time.time}}</a></p>
+            <p><b>Knot:</b> {{time.knot__name}}</p>
         
         <form action="{% url 'knotitapp:time' time.id %}" method="POST">
             {% csrf_token %}
