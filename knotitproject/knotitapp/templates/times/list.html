@@ -14,6 +14,8 @@
 
 
     <h1>Times</h1>
+
+    <a href="{% url 'knotitapp:time_form' %}">Add Time</a>
     <ol>
     {% for time in all_times %}
         <li>
