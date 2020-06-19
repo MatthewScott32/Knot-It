@@ -62,11 +62,9 @@ def knot_edit_form(request, knot_id):
         return render(request, template, context)
 
     if request.method == 'POST':
-        # Pass in the user edited data via the resquest.POST param, and any media files via request.FILES (i.e. docs, imgs, etc.) while ensuring the correct instance is being updated
+       
         form = KnotForm(current_user, request.POST, request.FILES, instance=knot)
 
-        # Ensure form validation is complete and the correct data is being passed back to the server
         if form.is_valid():
-            # Save the changes to the database
             form.save()
             return redirect('knotitapp:knots')
