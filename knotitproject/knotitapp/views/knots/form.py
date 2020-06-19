@@ -31,6 +31,7 @@ def knot_form(request):
     context = {}
     current_user = request.user.id
     if request.method == 'POST':
+        
         form = KnotForm(current_user, request.POST, request.FILES)
         if form.is_valid():
             knot = form.save(commit=False)
