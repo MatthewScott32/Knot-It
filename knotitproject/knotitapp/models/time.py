@@ -6,8 +6,8 @@ from .knot import Knot
 class Time(models.Model):
 
     time = models.CharField(max_length=50)
-    knot = models.ForeignKey(Knot, on_delete=models.DO_NOTHING)
-    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    knot = models.ForeignKey(Knot, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True)
 
     class Meta:
             verbose_name =("time")

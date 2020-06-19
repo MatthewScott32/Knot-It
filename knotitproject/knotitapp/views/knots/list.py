@@ -17,15 +17,15 @@ def knots_list(request):
 
                 return render(request, template, context)
             
-    elif request.method == 'POST':
-        form_data = request.POST
-        new_knot = Knot(
-            name = form_data['name'],
-            rope = form_data['rope_type'],
-            company = form_data['company'],
-            notes = form_data['notes'],
-            video = form_data['video'],
-            user_id = request.user.id,
-        ) 
-        new_knot.save()
-        return redirect(reverse('knotitapp:knots'))
+    # elif request.method == 'POST':
+    #     form_data = request.POST
+    #     new_knot = Knot(
+    #         name = form_data['name'],
+    #         rope = form_data['rope_type'],
+    #         company = form_data['company'],
+    #         notes = form_data['notes'],
+    #         video = form_data['video'],
+    #         user_id = request.user.id,
+    #     ) 
+        # new_knot.save()
+        # return redirect(reverse('knotitapp:knots'))
