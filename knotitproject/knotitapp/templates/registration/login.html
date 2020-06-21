@@ -3,13 +3,13 @@
 
 
 {% block css %}
-    <link rel="stylesheet" href="{% static '' %}" />
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}" />
 {% endblock %}
 
 {% block content %}
 <body>
-<h2>Login</h2>
-<form method="post">
+<h2 class="logins">Login</h2>
+<form class="login" method="post">
    <div>{% csrf_token %}
     {{ form.as_p }}</div>
     <button type="submit">Login</button>
