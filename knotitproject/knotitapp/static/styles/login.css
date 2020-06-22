@@ -1,26 +1,27 @@
-.logins {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.login {
-    flex-basis: 20%;
-    padding: 0 2em 0.5em 2em;
-    /* border: 1px solid gray; */
-    margin: 1em;
-    padding: 1.5em;
-}
-
-button {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-left: 400px;
-}
-
-div {
-    margin-left: 250px;
-}
+.registerbtn {
+    background-color: #575656;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    opacity: 0.9;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  input {
+    width: 15%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    justify-content: center;
+  }
+  
+  input:focus {
+    background-color: #ddd;
+    outline: none;
+  }
