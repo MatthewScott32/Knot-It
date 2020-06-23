@@ -1,9 +1,8 @@
 {% extends 'shared/base.html' %}
 {% load static%}
-
-{% comment %} {% block css %}
-    <link rel="stylesheet" href="{% static 'styles/knots.css' %}" />
-{% endblock %} {% endcomment %}
+ {% block css %}
+     <link rel="stylesheet" href="{% static 'styles/knotlist.css' %}" /> 
+{% endblock %}
 
    {% block title %}
             Knots
@@ -17,12 +16,14 @@
 
     <a href="{% url 'knotitapp:knot_form' %}">Add Knot</a>
 
+    <div>
     <ol>
     {% for knot in all_knots %}
-        <li>
+        <li class="card">
             <p><b>Knot:</b><a href="{% url 'knotitapp:knot' knot.id %}">{{knot.name}}</a></p>
             <p><b>Rope:</b> {{knot.rope_type}}</p>
         </li>
     {% endfor %}
     </ol>
+    </div>
 {% endblock %}

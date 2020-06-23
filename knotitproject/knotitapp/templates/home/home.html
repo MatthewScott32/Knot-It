@@ -3,50 +3,50 @@
 
 
 {% block css %}
-    <link rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}"/>
 {% endblock %}
 
 {% block content %}
 
-    <h1>Welcome to Knot It!</h1>
-    <h2><a href="{% url 'knotitapp:knot_form' %}">Create A Knot From The List</a></h2>
-
-    <ul>
-        <li><b>Over Hand Knot</b>: Safety knot </li>
-        <br/>
-        <li><b>Square Knot</b>: Joins the end of two ropes under tension</li>
-        <br/>
-        <li><b>Girth Hitch</b>: Attaches a piece of webbing or cord to an anchor or harness</li>
-        <br/>
-        <li><b>Figure Eight Bend</b>: To join the ends of two ropes</li>
-        <br/>
-        <li><b>Water Knot</b>: Joins the ends of tubular webbing</li>
-        <br/>
-        <li><b>Bowline</b>: To anchor a rope</li>
-        <br/>
-        <li><b>Triple Bowline</b>: To anchor a bite of rope(not the end of the rope)</li>
-        <br/>
-        <li><b>Clove Hitch</b>: Anchors the end of rope under tension</li>
-        <br/>
-        <li><b>Clove Hitch Middle of Rope</b>: Forms and anchor in the middle of rope</li>
-        <br/>
-        <li><b>Double Figure Eight</b>: Forms a fixed loop in rope</li>
-        <br/>
-        <li><b>Figure Eight Slip Knot</b>: Creates an adjustable bite in rope</li>
-        <br/>
-        <li><b>Middle of the Rope Prusik</b>: Creates a moveable friction hitch</li>
-        <br/>
-        <li><b>End of the Rope Prusik</b>: Creates a moveable friction hitch at the end of a rope</li>
-        <br/>
-        <li><b>Rerouted Figure of Eight</b>: To tie into a climbing rope</li>
-        <br/>
-        <li><b>Munter Hitch</b>: Forms a mechanical belay</li>
-        <br/>
-        <li><b>Super Munter Hitch</b>: Creates a high friction lower</li>
-        <br/>
-        <li><b>Auto Block</b>: Creates a moveable friction hitch with rope or webbing that is releaseable under a load</li>
-        <br/>
-        <li><b>Munter Mule Knot</b>: Creates a releasable anchor knot</li>
-    </ul>
-
+    <h1 style="text-align: center">Welcome to Knot It!</h1>
+    <h2 style="text-align: center"><a href="{% url 'knotitapp:knot_form' %}">Create A Knot From The List</a></h2>
+      <div class="list-type3">
+        <ul>
+            <li class="card"><b>Over Hand Knot</b>: Safety knot </li>
+            
+            <li class="card"><b>Square Knot</b>: Joins the end of two ropes under tension</li>
+            
+            <li class="card"><b>Girth Hitch</b>: Attaches webbing or cord to an anchor or harness</li>
+            
+            <li class="card"><b>Figure Eight Bend</b>: To join the ends of two ropes</li>
+            
+            <li class="card"><b>Water Knot</b>: Joins the ends of tubular webbing</li>
+            
+            <li class="card"><b>Bowline</b>: To anchor a rope</li>
+            
+            <li class="card"><b>Triple Bowline</b>: To anchor a bite of rope(not the end of the rope)</li>
+            
+            <li class="card"><b>Clove Hitch</b>: Anchors the end of rope under tension</li>
+            
+            <li class="card"><b>Clove Hitch Middle of Rope</b>: Forms and anchor in the middle of rope</li>
+            
+            <li class="card"><b>Double Figure Eight</b>: Forms a fixed loop in rope</li>
+            
+            <li class="card"><b>Figure Eight Slip Knot</b>: Creates an adjustable bite in rope</li>
+            
+            <li class="card"><b>Middle of the Rope Prusik</b>: Moveable friction hitch</li>
+            
+            <li class="card"><b>End of the Rope Prusik</b>: Moveable friction hitch at the end of a rope</li>
+            
+            <li class="card"><b>Rerouted Figure of Eight</b>: To tie into a climbing rope</li>
+            
+            <li class="card"><b>Munter Hitch</b>: Forms a mechanical belay</li>
+            
+            <li class="card"><b>Super Munter Hitch</b>: Creates a high friction lower</li>
+            
+            <li class="card"><b>Auto Block</b>: Moveable friction hitch with rope or webbing, releaseable</li>
+            
+            <li class="card"><b>Munter Mule Knot</b>: Creates a releasable anchor knot</li>
+        </ul>
+      </div>
 {% endblock %}

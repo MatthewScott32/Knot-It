@@ -2,35 +2,38 @@
 {% load static%}
 
 {% block css %}
-    <link rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'styles/timeform.css' %}"/>
 {% endblock %}
 
 {% block content %}
 
     {% if time.id is not None %}
-    <h1>Edit Time</h1>
+    <h1 style="text-align: center">Edit Time</h1>
     <form action="{% url 'knotitapp:time' time.id %}" method="post">
     {% else %}
-        <h1>New Time</h1>
+        <h1 style="text-align: center">New Time</h1>
         <form action="{% url 'knotitapp:times' %}" method="post">
         {% endif %}
         {% csrf_token %}
-        <fieldset>
-            <label for="time">Time: </label>
-            <input required id="time" type="text" name="time" placeholder="00(MM):00(SS)" value="{{time.time}}" required>
-        </fieldset>
-        <label for="knot">Knot: </label>
-        <select required id="knot_id" type="text" name="knot" value"{{knot.knot_id}}" required>
-                {% for knot in all_knots %}
-                    <option value="{{ knot.id }}">{{ knot.name }}</option>
-                {% endfor %} 
-        </select>
-
+          <div style="text-align: center">
+            <label style="text-align: center" for="time">Time: </label>
+            <input style="text-align: center" required id="time" type="text" name="time" placeholder="00(MM):00(SS)" value="{{time.time}}" required><br/>
+          </div>
+          <div style="text-align: center">
+            <label style="text-align: center" for="knot">Knot: </label>
+            <select style="text-align: center" required id="knot_id" type="text" name="knot" value"{{knot.knot_id}}" required>
+                    {% for knot in all_knots %}
+                        <option value="{{ knot.id }}">{{ knot.name }}</option>
+                    {% endfor %} 
+            </select><br/>
+          </div>
+          <div style="text-align: center">
         {% if time.id is not None %}
-            <input type="hidden" name="actual_method" value="PUT">
-            <input type="submit" value="Update" />
+            <input style="text-align: center" type="hidden" name="actual_method" value="PUT">
+            <input style="text-align: center" type="submit" value="Update" />
         {% else %}
-            <input type="submit" value="Create" />
+            <input style="text-align: center" type="submit" value="Create" />
         {% endif %}
+        </div>
     </form>
 {% endblock %}

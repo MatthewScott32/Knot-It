@@ -1,0 +1,19 @@
+.list-type3{
+    margin:0 auto;
+    width:500px;
+    }
+    .list-type3 li {
+    float:left;
+    height:35px;
+    line-height:35px;
+    font-size:15px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    font-family: 'Raleway', sans-serif;
+    }
+  
+.card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 5px;
+        background-color: darkgrey; 
+    }

@@ -8,7 +8,7 @@
     <title>
            Knot It!
     </title>
-    <link rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}"/>
 
     {% block css %}
     {% endblock %}
@@ -16,10 +16,10 @@
 
 <body>
     <nav>
-        <ol>
+        <ul class="navList">
             <li><b>Knot It!</b></li>
             {% if user.is_authenticated %}
-                <li><a href="{% url 'knotitapp:home' %}">Home</a></li>
+                <li><a href="{% url 'knotitapp:home' %}">Home</a></li><br/>
                 <li><a href="{% url 'knotitapp:knots' %}">Knots</a></li>
                 <li><a href="{% url 'knotitapp:times' %}">Times</a></li>
                 <li><a href="{% url 'knotitapp:logout' %}">Logout</a></li>
@@ -28,7 +28,7 @@
                 <li><a href="{% url 'knotitapp:login' %}">Login</a></li>
                 <li><a href="{% url 'knotitapp:register' %}">Register</a></li>
             {% endif %}
-        </ol>
+        </ul>
     </nav>
     <main>
         {% block content %}
