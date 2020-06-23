@@ -18,7 +18,7 @@
     <a href="{% url 'knotitapp:time_form' %}">Add Time</a>
     <ol>
     {% for time in all_times %}
-        <li class="card">
+        <li style="text-align: center" class="card">
             <p><b>Time:</b> {{time.time}}</a></p>
             <p><b>Knot:</b> {{time.knot__name}}</p>
 
