@@ -2,7 +2,7 @@
 {% load static%}
 
 {% block css %}
-    <link rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'styles/timelist.css' %}" />
 {% endblock %}
 
    {% block title %}
@@ -18,7 +18,7 @@
     <a href="{% url 'knotitapp:time_form' %}">Add Time</a>
     <ol>
     {% for time in all_times %}
-        <li>
+        <li class="card">
             <p><b>Time:</b> {{time.time}}</a></p>
             <p><b>Knot:</b> {{time.knot__name}}</p>
 
