@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 def knots_list(request):
     if request.method == 'GET':
                 current_user = request.user.id
-                all_knots = Knot.objects.filter(user_id=current_user).values("id", "name", "rope_type", "company", "notes", "how_to_video" )
+                all_knots = Knot.objects.filter(user_id=current_user).values("id", "name", "rope_type", "notes", "how_to_video" )
                 template = 'knots/list.html'
                 context = {
                     'all_knots': all_knots
