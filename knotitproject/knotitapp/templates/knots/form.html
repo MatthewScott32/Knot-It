@@ -8,7 +8,7 @@
 {% block content %}
 
     {% if knot_id is not None %}
-        <h1 style="text-align: center">Edit Knot</h1>
+        <h1 style="text-align: center" style="color: white">Edit Knot</h1>
         <form action="{% url 'knotitapp:knot_edit_form' knot_id %}" method="post" enctype="multipart/form-data">
     {% else %}
         <h1 style="text-align: center">New Knot</h1>
