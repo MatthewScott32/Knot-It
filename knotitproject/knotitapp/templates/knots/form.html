@@ -8,14 +8,14 @@
 {% block content %}
 
     {% if knot_id is not None %}
-        <h1 style="text-align: center">Edit Knot</h1>
+        <h1 style="text-align: center" style="color: white">Edit Knot</h1>
         <form action="{% url 'knotitapp:knot_edit_form' knot_id %}" method="post" enctype="multipart/form-data">
     {% else %}
         <h1 style="text-align: center">New Knot</h1>
         <form action="{% url 'knotitapp:knot_form' %}" method="post" enctype="multipart/form-data">
     {% endif %}
     {% csrf_token %}
-    <div style="text-align: center">{{ form.as_p }}</div>
+    <div style="text-align: center" class="card">{{ form.as_p }}</div>
         {% if knot_id is not None %}
             <input  type="hidden" name="actual_method" value="PUT">
             <div style="text-align: center"><input type="submit" value="Update" /></div>

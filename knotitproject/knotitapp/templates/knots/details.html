@@ -13,12 +13,13 @@
 
 {% block content %}
     <h1 style="text-align: center">Your Knot</h1>
+    <div class="card">
      <section style="text-align: center">
       <form action="{% url 'knotitapp:knot_edit_form' knot.id %}" method="GET">
         {% csrf_token %}
         <button>Edit</button>
       </form>
-
+      
        <form action="{% url 'knotitapp:knot' knot.id %}" method="POST">
         {% csrf_token %}
         <input type="hidden" name="actual_method" value="DELETE">
@@ -26,12 +27,10 @@
       </form>
 
     </section>
-
-            <p style="text-align: center"><video controls src="{{MEDIA_URL}}{{knot.how_to_video}}" type="video/mp4" alt="how_to_video" height="300" width="200">
-            </video></p>
-            <p style="text-align: center"><img src="{{MEDIA_URL}}{{knot.image}}" alt="image" height="200" width="150"></p>
             <p style="text-align: center"><b>Name:</b> {{knot.name}}</p>
             <p style="text-align: center"><b>Rope Type:</b>  {{knot.rope_type}}</p>
             <p style="text-align: center"><b>Notes:</b>  {{knot.notes}}</p>
-    
+            <p style="text-align: center"><video controls src="{{MEDIA_URL}}{{knot.how_to_video}}" type="video/mp4" alt="how_to_video" height="300" width="200">
+            </video></p>
+            <p style="text-align: center"><img src="{{MEDIA_URL}}{{knot.image}}" alt="image" height="200" width="150"></p>
 {% endblock %}
