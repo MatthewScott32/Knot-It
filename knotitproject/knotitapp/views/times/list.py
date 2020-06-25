@@ -10,14 +10,14 @@ def times_list(request):
     if request.method == 'GET':
 
         current_user = request.user.id
-        all_knots = Knot.objects.filter(user_id=current_user).values("id", "name", "rope_type", "company", "notes", "how_to_video", "image" )
+        all_knots = Knot.objects.filter(user_id=current_user).values("id", "name", "rope_type", "notes", "how_to_video", "image" )
 
         all_times = Time.objects.filter(user_id=current_user).values("id", "time", "knot", "knot__name")
         knotId = request.GET.get('knot', None)
 
         if knotId is not None:
-            all_knots = all_knots.filter(knot_id=knotId)
-
+            all_times = all_times.filter(knot_id=knotId)
+            
         template = 'times/list.html'
         context = {
                     'all_knots':all_knots,
