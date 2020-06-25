@@ -22,6 +22,7 @@
           <div style="text-align: center">
             <label style="text-align: center" for="knot">Knot: </label>
             <select style="text-align: center" required id="knot_id" type="text" name="knot" value"{{knot.knot_id}}" required>
+            <option value="" selected="selected" disabled>Select Knot</option>
                     {% for knot in all_knots %}
                         <option value="{{ knot.id }}">{{ knot.name }}</option>
                     {% endfor %} 

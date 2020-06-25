@@ -16,8 +16,8 @@ def times_list(request):
         knotId = request.GET.get('knot', None)
 
         if knotId is not None:
-            all_knots = all_knots.filter(knot_id=knotId)
-
+            all_times = all_times.filter(knot_id=knotId)
+            
         template = 'times/list.html'
         context = {
                     'all_knots':all_knots,

@@ -13,9 +13,19 @@
 {% block content %}
 
 
-    <h1>Times</h1>
+    <h1 style="text-align: center">Times</h1>
 
-    <a href="{% url 'knotitapp:time_form' %}">Add Time</a>
+    <fieldset style="margin-inline-start: 400px; margin-inline-end: 400px;">
+        <div style="text-align: center"><label class="items" for="knot">Sort Times By Knot</label></div>
+        <div style="text-align: center"><select id="knot" type="text" name="knot"></div>
+        <option value="" selected="selected" disabled>Select Knot</option>
+            {% for knot in all_knots %}
+                <option {% if knot.id == knot_id %}selected{% endif %} value="{{knot.id}}">{{ knot.name }}</option>
+            {% endfor %}
+        </select>
+    </fieldset></br>
+
+    <div style="text-align: center"><a href="{% url 'knotitapp:time_form' %}">Add Time</a></div>
     <ol>
     {% for time in all_times %}
         <li style="text-align: center" class="card">
@@ -35,4 +45,8 @@
         </li>
     {% endfor %}
     </ol>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'scripts/knots.js' %}"></script>
 {% endblock %}
