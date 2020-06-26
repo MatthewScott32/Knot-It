@@ -8,9 +8,8 @@ from django.urls import reverse
 class Knot(models.Model):
     name = models.CharField(max_length=50, default='')
     rope_type = models.CharField(max_length=50, default='')
-    notes = models.CharField(max_length=50, default='')
-    how_to_video = models.FileField(upload_to='videos/', null=True, verbose_name="")
     image = models.ImageField(upload_to='images/', null=True)
+    how_to_video = models.FileField(upload_to='videos/', null=True)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
 class Meta:

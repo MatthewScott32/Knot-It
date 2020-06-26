@@ -34,3 +34,14 @@
     margin-right: 200px;
 }
 
+label { 
+  display: inline-block; 
+  width: 210px; 
+}
+
+input {
+    padding: 15px;
+    align-self: center;
+    min-width: 80px;
+    max-width: 500px;
+}

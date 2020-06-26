@@ -30,3 +30,12 @@
     margin-left: 225px;
     margin-right: 225px !important;
 }
+
+label { 
+  display: inline-block; 
+  width: 210px; 
+}
+
+.select {
+  width: 155px !important;
+}
