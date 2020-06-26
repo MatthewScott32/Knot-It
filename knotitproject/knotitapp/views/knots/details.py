@@ -31,7 +31,6 @@ def knot_details(request, knot_id):
                 knot_update = Knot.objects.get(pk=knot_id)
                 knot_update.name = form_data['name']
                 knot_update.rope_type = form_data['rope_type']
-                knot_update.notes = form_data['notes']
                 knot_update.how_to_video = form_data['how_to_video']
                 knot_update.image = form_data['image']
 
